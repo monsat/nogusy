@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "nogusy",
+    "version": "1.0",
+    "description": "Redirect to the article you really want to see",
+    "options_page": "options.html",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "images/glossy-silver-icon-social-media-logos-facebook-logo-square.png",
+        "default_title": "change nogusy settings"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://gunosy.com/g/*"],
+            "js": ["redirect.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
+}
